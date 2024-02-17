@@ -21,8 +21,8 @@ ArgoCD 구축하고 배포를 진행 한다.
     - 식스샵3 개발 EKS 내에 argocd 네임스페이스를 하나 만듬
     - AWS ALB Controller 를 이용하여 ALB 를 구성
     - 도메인을 연결하고 SSL 인증서 연결함
-- ArgoCD URL : [`**argocd-dev.sixshop3.com**`](http://argocd-dev.sixshop3.com/)
-- ArgoCD Rollout URL : [`**argoroll-dev.sixshop3.com**`](http://argoroll-dev.sixshop3.com/)
+- ArgoCD URL : secretdomain
+- ArgoCD Rollout URL : secretdomain
 - 구성된 Pods 는 아래와 같음
 
 ```bash
@@ -51,7 +51,7 @@ argocd-server-75ccfd9f-ww5ms                        1/1     Running   0         
         - EKS Cluster 연결
 
     ```bash
-    argocd cluster add arn:aws:eks:ap-northeast-2:746701091692:cluster/dvo-ss3-dev-eks
+    argocd cluster add arn:aws:eks:ap-northeast-2:secret:cluster/dvo-ss3-dev-eks
     ```
 
     - Project - Repository 구성
